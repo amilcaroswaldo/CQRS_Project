@@ -14,11 +14,10 @@ namespace leave_management.Persistance
 {
     public static class PersistanceServiceRegitration
     {
-        public static IServiceCollection AddPersistanceService(this IServiceCollection services)
+        public static IServiceCollection AddPersistanceService(this IServiceCollection services, IConfiguration configuration)
         {
-            string connectionString = @"User ID='postgres';Password='admin';Host=127.0.0.1;Port=5432;Database='db_leave_management';";
             services.AddDbContext<DBContextPg>(options =>
-                options.UseNpgsql(connectionString));
+                options.UseNpgsql(configuration.GetConnectionString("pg-connString")));
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
             services.AddScoped<ILeaveRequestRepository, LeaveRequestRepository>();
