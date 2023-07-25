@@ -19,9 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "leave-management.Domain", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "leave-management.Application", "leave-management.Application\leave-management.Application.csproj", "{730618C6-6653-4F39-AA9A-ACE7A321B9D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "leave-management.Persistance", "leave-management.Persistance\leave-management.Persistance.csproj", "{D155E1F8-403C-4FD4-97AA-88433AA0BB02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "leave-management.Persistance", "leave-management.Persistance\leave-management.Persistance.csproj", "{D155E1F8-403C-4FD4-97AA-88433AA0BB02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "leave-management.Infraestructure", "leave-management.Infraestructure\leave-management.Infraestructure.csproj", "{D8FE67F0-BADA-473F-B7EE-3AD3B8A6F8C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "leave-management.Infraestructure", "leave-management.Infraestructure\leave-management.Infraestructure.csproj", "{D8FE67F0-BADA-473F-B7EE-3AD3B8A6F8C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "leave-management.Api", "leave-management.Api\leave-management.Api.csproj", "{59B67437-AB18-400E-AF41-567AAA93350A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{D8FE67F0-BADA-473F-B7EE-3AD3B8A6F8C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8FE67F0-BADA-473F-B7EE-3AD3B8A6F8C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8FE67F0-BADA-473F-B7EE-3AD3B8A6F8C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59B67437-AB18-400E-AF41-567AAA93350A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59B67437-AB18-400E-AF41-567AAA93350A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59B67437-AB18-400E-AF41-567AAA93350A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59B67437-AB18-400E-AF41-567AAA93350A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{730618C6-6653-4F39-AA9A-ACE7A321B9D6} = {62BDF584-C6AE-450F-96DA-22F63E6219F5}
 		{D155E1F8-403C-4FD4-97AA-88433AA0BB02} = {0C21D820-3C6F-4B6D-B5FD-08FBCAA8630E}
 		{D8FE67F0-BADA-473F-B7EE-3AD3B8A6F8C6} = {0C21D820-3C6F-4B6D-B5FD-08FBCAA8630E}
+		{59B67437-AB18-400E-AF41-567AAA93350A} = {A7846476-28D5-4514-9707-63D2A79C8409}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C57F130F-D753-4A9A-9C21-1E133E55CD76}
