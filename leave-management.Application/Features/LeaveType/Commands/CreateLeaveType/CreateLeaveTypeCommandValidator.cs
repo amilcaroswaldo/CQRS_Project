@@ -23,10 +23,10 @@ namespace leave_management.Application.Features.LeaveType.Commands.CreateLeaveTy
                 .LessThan(100).WithMessage("{PropertyName} cannot exceed 100")
                 .GreaterThan(1).WithMessage("{PropertyName} cannot be less 1");
 
-            RuleFor(q => q)
+           /* RuleFor(q => q)
                 .MustAsync(LeaveTypeNameUnique)
                 .WithMessage("Leave type already exists");
-            _leaveTypeRepository = leaveTypeRepository;
+            _leaveTypeRepository = leaveTypeRepository;*/
         }
 
         private Task<bool> LeaveTypeNameUnique(CreateLeaveTypeCommand command, CancellationToken token) => _leaveTypeRepository.IsLeaveTypeUniqye(command.Name);
