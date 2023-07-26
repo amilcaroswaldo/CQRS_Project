@@ -11,9 +11,9 @@ namespace leave_management.Persistance.DataBaseContext
 {
     public class DBContextPg : DbContext
     {
-        public DBContextPg(DbContextOptions options) : base(options) 
+        public DBContextPg(DbContextOptions<DBContextPg> options) : base(options) 
         {
-            
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }    
 
         public DbSet<LeaveType> LeaveTypes { get; set; }
@@ -25,7 +25,7 @@ namespace leave_management.Persistance.DataBaseContext
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(DBContextPg).Assembly);
             base.OnModelCreating(modelBuilder);
         }
-        public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             foreach (var entry in base.ChangeTracker.Entries<BaseEntity>()
                 .Where(q => q.State == EntityState.Added || q.State == EntityState.Modified))

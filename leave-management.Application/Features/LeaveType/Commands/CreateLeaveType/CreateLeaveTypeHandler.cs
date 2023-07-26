@@ -37,6 +37,13 @@ namespace leave_management.Application.Features.LeaveType.Commands.CreateLeaveTy
             }
             //convert to domain entity object
             var leaveTypeToCreate = _mapper.Map<Domain.LeaveType>(request);
+           /* var leaveTypeCreate = new Domain.LeaveType
+            {
+                DateCreated = DateTime.UtcNow,
+                DateModified = DateTime.UtcNow,
+                DefaultDays = request.DefaultDays,
+                Name = request.Name
+            };*/
             //add db
             await _leaveTypeRepository.CreateAsync(leaveTypeToCreate);
             return leaveTypeToCreate.Id;

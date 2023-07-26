@@ -2,6 +2,7 @@
 using leave_management.Domain.Common;
 using leave_management.Persistance.DataBaseContext;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +22,16 @@ namespace leave_management.Persistance.Repositories
 
         public async Task CreateAsync(T entity)
         {
-            await _dBContext.AddAsync(entity);
-            await _dBContext.SaveChangesAsync();
+            try
+            {
+                await _dBContext.AddAsync(entity);
+                await _dBContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                throw;
+            }
         }
 
         public async Task DeleteAsync(T entity)
@@ -43,8 +52,9 @@ namespace leave_management.Persistance.Repositories
 
         public async Task UpdateAsync(T entity)
         {
-            _dBContext.Entry(entity).State = EntityState.Modified;
-            await _dBContext.SaveChangesAsync();
+             _dBContext.Entry(entity).State = EntityState.Modified;
+            // _dBContext.Update(entity);
+             await _dBContext.SaveChangesAsync();
         }
     }
 }
